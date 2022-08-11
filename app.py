@@ -8,7 +8,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
-from flask import flask, jsonify
+from flask import Flask, jsonify
 
 # access SQLite database
 engine = create_engine("sqlite:///hawaii.sqlite")
@@ -29,7 +29,6 @@ app = Flask(__name__)
 
 # welcome route
 @app.route('/')
-
 def welcome():
     return(
     '''
@@ -40,7 +39,6 @@ def welcome():
     /api/v1.0/tobs
     /api/v1.0/temp/start/end
     ''')
-    )
 
 # precipitation route
 @app.route('/api/v1.0/precipitation')
